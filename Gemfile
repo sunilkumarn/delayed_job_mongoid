@@ -8,19 +8,6 @@ group :test do
   gem 'simplecov', :require => false
 end
 
-case version = ENV['MONGOID_VERSION'] || '~> 3.1'
-when /4/
-  gem 'mongoid', github: 'mongoid/mongoid'
-when /3/
-  gem 'mongoid', '~> 3.1'
-else
-  gem 'mongoid', version
-end
-
-platforms :rbx do
-  gem 'rubinius-coverage'
-  gem 'rubysl'
-  gem 'rubysl-json'
-end
+gem 'mongoid', github: 'mongoid/mongoid'
 
 gemspec
